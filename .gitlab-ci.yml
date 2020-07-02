@@ -6,4 +6,4 @@ flutter_test: # Name of the lane
   script:
     - flutter test # Run Flutter test
   tags:
-    - ci,cd # Tags for runner
+    - Flutter # Tags for runner
