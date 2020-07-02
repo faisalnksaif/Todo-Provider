@@ -29,6 +29,6 @@ deploy_android:
     # - flutter_build_android
   script:
     - appcenter login --token $APP_CENTER_API_TOKEN
-    - appcenter distribute release -f build/app/outputs/apk/release/app-release.apk -g Collaborators —app [username]/[project]
+    - appcenter distribute release -f build/app/outputs/apk/release/app-release.apk -g Collaborators —app [faisalnksaif]/[Todo]
   tags:
     - Flutter
