@@ -1,5 +1,6 @@
 stages:
   - test # All jobs related for testing such as Unit Test
+  - build
 
 flutter_test: # Name of the lane
   stage: test # type of stage
