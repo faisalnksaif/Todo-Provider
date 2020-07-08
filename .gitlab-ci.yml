@@ -9,7 +9,7 @@ stages:
 #     - flutter test # Run Flutter test
 #   tags:
 #     - Flutter # Tags for runner
-
+#
 flutter_build_android: #Job name
   stage: build # kind of job
   before_script:
