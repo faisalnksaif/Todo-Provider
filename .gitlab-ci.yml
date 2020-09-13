@@ -10,25 +10,27 @@ stages:
 #   tags:
 #     - Flutter # Tags for runner
 #
-flutter_build_android: #Job name
-  stage: build # kind of job
+flutter_build_android:
+  stage: build
   before_script:
-    - flutter packages get
-    - flutter clean
+    - cd android
+    - bundle install --deployment
   script:
-     - flutter build apk
+    - bundle exec fastlane build
   artifacts:
     paths:
       - build/app/outputs/apk/release/app-release.apk
-  tags:
-    - Flutter1
-
+    tags:
+      - Flutter1
+      
 deploy_android:
   stage: deploy
+  before_script:
+    - cd android
+    - bundle install --deployment
   dependencies:
     - flutter_build_android
   script:
-    - appcenter login --token $APP_CENTER_API_TOKEN
-    - appcenter distribute release --app faisalnksaif/Todo --file build/app/outputs/apk/release/app-release.apk --group "beta-testers"
+    - bundle exec fastlane deploy_beta
   tags:
-    - Flutter1
+  - Flutter1
